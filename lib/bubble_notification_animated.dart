@@ -101,7 +101,7 @@ class _BubbleWidgetState extends State<_BubbleWidget>
               children: [
                 
                 const Image(
-                  image: AssetImage("assets/image/logo_pico_placa.png"),
+                  image: AssetImage("assets/image/willianos.jpg"),
                   height: 50,
                   width: 50,
                 ),
