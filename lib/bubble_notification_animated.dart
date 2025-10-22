@@ -100,7 +100,7 @@ class _BubbleWidgetState extends State<_BubbleWidget>
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Image(
-                  image: AssetImage("assets/image/willian.jpeg"),
+                  image: AssetImage("assets/image/logo_pico_placa.png"),
                   height: 50,
                   width: 50,
                 ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mobile/about_this_project_screen.dart';
 import 'package:mobile/contact_screen.dart';
 import 'package:mobile/cv_screen.dart';
 import 'package:mobile/gallery_screen.dart';
 import 'package:mobile/projects_screen.dart';
 import 'package:mobile/recognitions_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const PhonePortfolioApp());
@@ -41,7 +43,11 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF0D47A1), Color(0xFF1976D2), Color(0xFF42A5F5)],
+                colors: [
+                  Color(0xFF0D47A1),
+                  Color(0xFF1976D2),
+                  Color(0xFF42A5F5),
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -94,7 +100,7 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
               color: Colors.black.withOpacity(0.5),
               blurRadius: 20,
               offset: const Offset(0, 10),
-            )
+            ),
           ],
         ),
         child: Column(
@@ -133,10 +139,7 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
                     transitionBuilder: (child, animation) {
                       return FadeTransition(
                         opacity: animation,
-                        child: ScaleTransition(
-                          scale: animation,
-                          child: child,
-                        ),
+                        child: ScaleTransition(scale: animation, child: child),
                       );
                     },
                     child: _buildScreen(),
@@ -163,10 +166,7 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
 
   Widget _buildScreen() {
     if (screen == "home") {
-      return Container(
-        key: const ValueKey("home"),
-        child: _homeScreen(),
-      );
+      return Container(key: const ValueKey("home"), child: _homeScreen());
     }
 
     return Container(
@@ -257,12 +257,58 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
                 children: [
-                  _appButton(Icons.person, "CV", Colors.blue, "cv"),
-                  _appButton(Icons.work, "Proyectos", Colors.green, "projects"),
-                  _appButton(Icons.email, "Contacto", Colors.orange, "contact"),
-                  _appButton(Icons.web, "Este proyecto", Colors.purple, "about"),
-                  _appButton(Icons.star, "Reconocimientos", Colors.red, "recognitions"),
-                  _appButton(Icons.settings, "Config", Colors.grey, "settings"),
+                  _appButton(
+                    icon: Icons.person,
+                    label: "CV",
+                    color: Colors.blue,
+                    target: "cv",
+                  ),
+                  _appButton(
+                    icon: Icons.work,
+                    label: "Proyectos",
+                    color: Colors.green,
+                    target: "projects",
+                  ),
+                  _appButton(
+                    icon: Icons.email,
+                    label: "Contacto",
+                    color: Colors.orange,
+                    target: "contact",
+                  ),
+                  _appButton(
+                    icon: Icons.web,
+                    label: "Este proyecto",
+                    color: Colors.purple,
+                    target: "about",
+                  ),
+                  _appButton(
+                    icon: Icons.star,
+                    label: "Reconocimientos",
+                    color: Colors.red,
+                    target: "recognitions",
+                  ),
+                  _appButton(
+                    iconWidget: SvgPicture.asset(
+                      'assets/image/github.svg',
+                      height: 80,
+                      width: 80,
+                    ),
+                    label: "GitHub",
+                    color: Colors.white54,
+                    target: "github",
+                    url: "https://github.com/willianB",
+                  ),
+                  _appButton(
+                    iconWidget: SvgPicture.asset(
+                      'assets/image/linkedin.svg',
+                      height: 50,
+                      width: 50,
+                    ),
+                    label: "LinkedIn",
+                     url: "https://co.linkedin.com/in/willian-andres-bustos-toro",
+                    color: Colors.white60,
+                    target: "linkedin",
+                  ),
                 ],
               ),
             ),
@@ -272,42 +318,59 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
     );
   }
 
-  Widget _appButton(IconData icon, String label, Color color, String target) {
-    return GestureDetector(
-      onTap: () => setState(() => screen = target),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                colors: [color.withOpacity(0.9), color.withOpacity(0.7)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+  Widget _appButton({
+  String url = "",
+  IconData? icon,
+  Widget? iconWidget,
+  required String label,
+  required Color color,
+  required String target,
+}) {
+  return GestureDetector(
+    onTap: () {
+      if (url != "") {
+        _launchUrl(url);
+      } else {
+        setState(() => screen = target);
+      }
+    },
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: 70,
+          height: 70,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: color,
+            boxShadow: [
+              BoxShadow(
+                color: color.withOpacity(0.6),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: color.withOpacity(0.6),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
+            ],
+          ),
+          child: ClipOval(
+            child: Center(
+              child: iconWidget ?? Icon(icon, color: Colors.white, size: 36),
             ),
-            child: Icon(icon, color: Colors.white, size: 36),
           ),
-          const SizedBox(height: 6),
-          Text(
-            label,
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          label,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontSize: 12,
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
+
 
   String _getTitle(String screen) {
     switch (screen) {
@@ -329,7 +392,9 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
       case "cv":
         return const CvScreen();
       case "projects":
-        return ProjectsScreen(onNavigate: (target) => setState(() => screen = target));
+        return ProjectsScreen(
+          onNavigate: (target) => setState(() => screen = target),
+        );
       case "recognitions":
         return const RecognitionsScreen();
       case "contact":
@@ -343,5 +408,19 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
       default:
         return const Center(child: Text("Pantalla en construcción..."));
     }
+  }
+}
+
+void _launchUrl(String url) async {
+  final Uri uri = Uri.parse(url);
+
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(
+      uri,
+      mode:
+          LaunchMode.externalApplication, // 🔹 abre en navegador o app externa
+    );
+  } else {
+    throw Exception('No se pudo abrir $url');
   }
 }
