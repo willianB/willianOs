@@ -66178,7 +66178,7 @@ Zw(){var s=null,r=A.dq(40),q=A.c([new A.dc(0,B.e4,A.am(B.c.ah(127.5),B.k.u()>>>1
 return A.nK(A.dd(s,A.fy(A.c([p,A.lu(A.dd(s,A.PH(A.dq(30),A.Ot(this.SR(),B.d5,B.a4,new A.a7C())),B.q,s,s,new A.cf(B.h2,n,s,o,s,s,B.an),s,s,s,B.kI,s,s,s,s)),A.dd(s,s,B.q,s,s,new A.cf(B.bJ,s,s,A.dq(20),s,s,B.an),s,6,s,B.AW,s,s,s,80)],t.p),B.aF,B.af,B.aa),B.q,s,s,new A.cf(B.k,s,s,r,q,s,B.an),s,700,s,s,s,s,s,400),s,s)},
 SR(){var s,r,q=this,p=null,o=q.d
 if(o==="home"){o=t.p
-s=A.c([q.lz(B.BI,"CV",B.aV,"cv"),q.lz(B.l4,"Proyectos",B.GB,"projects"),q.lz(B.l0,"Contacto",B.Gy,"contact"),q.lz(B.l3,"Este proyecto",B.Gx,"about"),q.lz(B.l2,"Reconocimientos",B.Gz,"recognitions"),q.lz(B.l1,"Config",B.GC,"settings")],o)
+s=A.c([q.lz(B.BI,"CV",B.aV,"cv"),q.lz(B.l4,"Proyectos",B.GB,"projects"),q.lz(B.l0,"Contacto",B.Gy,"contact"),q.lz(B.l3,"Este proyecto",B.Gx,"about"),q.lz(B.l2,"Reconocimientos",B.Gz,"recognitions"),q.lz(B.l1,"Configss",B.GC,"settings")],o)
 r=A.aA([null,0],t.LO,t.S)
 return A.dd(p,A.a_e(!0,A.fy(A.c([B.bf,A.lu(new A.dh(B.bM,new A.tC(new A.FA(3,20,20,1),new A.a1s(!0,!0,!0,s,r),p,B.aD,!1,p,p,B.fF,!1,p,6,B.ac,p,p,B.ab,B.a5,p),p))],o),B.aF,B.af,B.aa),B.aP,!0),B.q,p,p,p,p,p,B.PR,p,p,p,p,p)}return A.dd(p,A.fy(A.c([q.a1G(),A.lu(q.Vg())],t.p),B.aF,B.af,B.aa),B.q,p,p,p,p,p,new A.cC(o,t.kK),p,p,p,p,p)},
 a1G(){var s=this,r=null,q=A.c([new A.dc(0,B.e4,A.am(B.c.ah(25.5),B.k.u()>>>16&255,B.k.u()>>>8&255,B.k.u()&255),B.qz,8)],t.sq),p=A.dd(r,A.acm(r,B.BQ,r,r,new A.a7E(s),r,r),B.q,r,r,B.xg,r,r,r,r,r,r,r,r),o=s.d
