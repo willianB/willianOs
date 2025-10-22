@@ -26,7 +26,7 @@ class ProjectsScreen extends StatelessWidget {
         "year": "2025",
         "description":
             "App Android que notifica restricciones vehiculares en Popayán. Cuenta con verificación de seguridad de app y dispositivo.",
-        "image": "../assets/image/logo_pico_placa.png",
+        "image": "assets/image/logo_pico_placa.png",
         "tags": [
           "Ktor",
           "EC2",
@@ -44,7 +44,7 @@ class ProjectsScreen extends StatelessWidget {
         "year": "2022",
         "description":
             "App de monitoreo de consumo eléctrico en tiempo real, control remoto de dispositivos y generación de reportes.",
-        "image": "../assets/image/ecohogar_logo.png",
+        "image": "assets/image/ecohogar_logo.png",
         "tags": [
           "Kotlin",
           "MongoDB",
