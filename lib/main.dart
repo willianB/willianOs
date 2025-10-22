@@ -91,7 +91,7 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
     return Center(
       child: Container(
         width: 400,
-        height: 700,
+        height: 690,
         decoration: BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.circular(40),
@@ -276,7 +276,11 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
                     target: "contact",
                   ),
                   _appButton(
-                    icon: Icons.web,
+                    iconWidget: SvgPicture.asset(
+                      'assets/image/flutter.svg',
+                      height: 50,
+                      width: 50,
+                    ),
                     label: "Este proyecto",
                     color: Colors.purple,
                     target: "about",
