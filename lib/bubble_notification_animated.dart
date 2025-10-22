@@ -99,9 +99,8 @@ class _BubbleWidgetState extends State<_BubbleWidget>
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                
                 const Image(
-                  image: AssetImage("assets/image/willianos.jpg"),
+                  image: AssetImage("assets/image/willian.jpeg"),
                   height: 50,
                   width: 50,
                 ),
