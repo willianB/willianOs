@@ -262,7 +262,7 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
                   _appButton(Icons.email, "Contacto", Colors.orange, "contact"),
                   _appButton(Icons.web, "Este proyecto", Colors.purple, "about"),
                   _appButton(Icons.star, "Reconocimientos", Colors.red, "recognitions"),
-                  _appButton(Icons.settings, "Configss", Colors.grey, "settings"),
+                  _appButton(Icons.settings, "Config", Colors.grey, "settings"),
                 ],
               ),
             ),
