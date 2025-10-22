@@ -99,6 +99,7 @@ class _BubbleWidgetState extends State<_BubbleWidget>
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
+                
                 const Image(
                   image: AssetImage("assets/image/logo_pico_placa.png"),
                   height: 50,
