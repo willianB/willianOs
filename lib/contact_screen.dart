@@ -100,7 +100,7 @@ class _ContactScreenState extends State<ContactScreen>
                     // Foto circular con animación
                     const CircleAvatar(
                       radius: 60,
-                      backgroundImage: AssetImage("image/willian.jpeg"),
+                      backgroundImage: AssetImage("assets/image/willian.jpeg"),
                     ),
                     const SizedBox(height: 24),
 
