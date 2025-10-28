@@ -127,7 +127,7 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
                   borderRadius: BorderRadius.circular(30),
                   image: screen == "home"
                       ? const DecorationImage(
-                          image: AssetImage("assets/image/willianos.jpg"),
+                          image: AssetImage("assets/image/iphone.jpg"),
                           fit: BoxFit.cover,
                         )
                       : null,
@@ -317,6 +317,17 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
               ),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Text(
+              "WillianOs v1.0",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -380,11 +391,13 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
       case "cv":
         return "Currículum";
       case "projects":
-        return "Proyectos";
+        return "🚀 Proyectos Personales";
       case "contact":
         return "Contacto";
       case "recognitions":
         return "🎖️ Logros y Premios";
+      case "about":
+        return "Este proyecto";
       default:
         return "App";
     }
