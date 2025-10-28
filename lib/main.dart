@@ -213,32 +213,31 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
           ),
           const SizedBox(width: 12),
           Expanded(
-            child: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 400),
-              transitionBuilder: (child, animation) => SlideTransition(
-                position: Tween<Offset>(
-                  begin: const Offset(0.2, 0),
-                  end: Offset.zero,
-                ).animate(animation),
-                child: FadeTransition(opacity: animation, child: child),
-              ),
-              child: Text(
-                _getTitle(screen),
-                key: ValueKey<String>(_getTitle(screen)),
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+            child: Center(
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 400),
+                transitionBuilder: (child, animation) => SlideTransition(
+                  position: Tween<Offset>(
+                    begin: const Offset(0.2, 0),
+                    end: Offset.zero,
+                  ).animate(animation),
+                  child: FadeTransition(opacity: animation, child: child),
                 ),
-                overflow: TextOverflow.ellipsis,
+                child: Text(
+                  _getTitle(screen),
+                  key: ValueKey<String>(_getTitle(screen)),
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ),
-          IconButton(
-            icon: const Icon(Icons.settings, color: Colors.white),
-            onPressed: () {},
-          ),
-          const SizedBox(width: 8),
+          const SizedBox(width: 52),
         ],
       ),
     );
@@ -309,7 +308,8 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
                       width: 50,
                     ),
                     label: "LinkedIn",
-                     url: "https://co.linkedin.com/in/willian-andres-bustos-toro",
+                    url:
+                        "https://co.linkedin.com/in/willian-andres-bustos-toro",
                     color: Colors.white60,
                     target: "linkedin",
                   ),
@@ -323,58 +323,57 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
   }
 
   Widget _appButton({
-  String url = "",
-  IconData? icon,
-  Widget? iconWidget,
-  required String label,
-  required Color color,
-  required String target,
-}) {
-  return GestureDetector(
-    onTap: () {
-      if (url != "") {
-        _launchUrl(url);
-      } else {
-        setState(() => screen = target);
-      }
-    },
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          width: 70,
-          height: 70,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: color,
-            boxShadow: [
-              BoxShadow(
-                color: color.withOpacity(0.6),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
+    String url = "",
+    IconData? icon,
+    Widget? iconWidget,
+    required String label,
+    required Color color,
+    required String target,
+  }) {
+    return GestureDetector(
+      onTap: () {
+        if (url != "") {
+          _launchUrl(url);
+        } else {
+          setState(() => screen = target);
+        }
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 70,
+            height: 70,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color,
+              boxShadow: [
+                BoxShadow(
+                  color: color.withOpacity(0.6),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: ClipOval(
+              child: Center(
+                child: iconWidget ?? Icon(icon, color: Colors.white, size: 36),
               ),
-            ],
-          ),
-          child: ClipOval(
-            child: Center(
-              child: iconWidget ?? Icon(icon, color: Colors.white, size: 36),
             ),
           ),
-        ),
-        const SizedBox(height: 6),
-        Text(
-          label,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w500,
-            fontSize: 12,
+          const SizedBox(height: 6),
+          Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+              fontSize: 12,
+            ),
           ),
-        ),
-      ],
-    ),
-  );
-}
-
+        ],
+      ),
+    );
+  }
 
   String _getTitle(String screen) {
     switch (screen) {
