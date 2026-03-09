@@ -6,6 +6,7 @@ import 'package:mobile/cv_screen.dart';
 import 'package:mobile/gallery_screen.dart';
 import 'package:mobile/projects_screen.dart';
 import 'package:mobile/recognitions_screen.dart';
+import 'package:mobile/tuto_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -313,6 +314,12 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
                     color: Colors.white60,
                     target: "linkedin",
                   ),
+                  _appButton(
+                    icon: Icons.school,
+                    label: "Mis Tutoriales",
+                    color: const Color.fromARGB(255, 87, 78, 212),
+                    target: "tuto",
+                  )
                 ],
               ),
             ),
@@ -398,6 +405,8 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
         return "🎖️ Logros y Premios";
       case "about":
         return "Este proyecto";
+      case "tuto":
+        return "Mis Tutoriales";
       default:
         return "App";
     }
@@ -421,6 +430,8 @@ class _PhonePortfolioState extends State<PhonePortfolio> {
         return const GalleryScreen(projectId: "ecohogar");
       case "about":
         return const AboutThisProjectScreen();
+      case "tuto":
+        return const TutoScreen();
       default:
         return const Center(child: Text("Pantalla en construcción..."));
     }

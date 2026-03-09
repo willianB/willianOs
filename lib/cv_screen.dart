@@ -369,7 +369,7 @@ class _CvScreenState extends State<CvScreen>
 
                 const SizedBox(height: 50),
                 Text(
-                  "© 2025 Willian Bustos",
+                  "© 2026 Willian Bustos",
                   style: TextStyle(
                     color: Colors.grey.shade500,
                     fontSize: 13,

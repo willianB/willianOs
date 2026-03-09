@@ -22,7 +22,7 @@ class _ProjectsScreenState extends State<ProjectsScreen>
       "title": "Pico y Placa Popayán",
       "year": "2025",
       "description":
-          "App Android que notifica restricciones vehiculares en Popayán. Cuenta con verificación de seguridad de app y dispositivo.",
+          "App Android que notifica restricciones vehiculares en Popayán. Cuenta con verificación de seguridad de app y dispositivo. (Actualmente la estoy migrando a CMP y KMP)",
       "image": "assets/image/logo_pico_placa.png",
       "tags": [
         "Ktor",
