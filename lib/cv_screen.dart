@@ -274,6 +274,8 @@ class _CvScreenState extends State<CvScreen>
                     alignment: WrapAlignment.center,
                     children: [
                       _chip("Kotlin"),
+                      _chip("Kotlin Multiplatform"),
+                      _chip("Compose Multiplatform"),
                       _chip("Java"),
                       _chip("Jetpack Compose"),
                       _chip("Coroutines"),

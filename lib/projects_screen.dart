@@ -25,6 +25,8 @@ class _ProjectsScreenState extends State<ProjectsScreen>
           "App Android que notifica restricciones vehiculares en Popayán. Cuenta con verificación de seguridad de app y dispositivo. (Actualmente la estoy migrando a CMP y KMP)",
       "image": "assets/image/logo_pico_placa.png",
       "tags": [
+        "Kotlin Multiplatform",
+        "Compose Multiplatform",
         "Ktor",
         "EC2",
         "Jetpack Compose",
